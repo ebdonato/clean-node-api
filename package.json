@@ -1,15 +1,17 @@
 {
-  "name": "clean-node-api",
-  "version": "1.0.0",
-  "description": "Para inserir alias de comando git, insira no arquivo de configuração:",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "git-commit-msg-linter": "^3.2.8"
-  }
+    "name": "clean-node-api",
+    "version": "1.0.0",
+    "description": "NodeJs, Typescript, TDD, DDD, Clean Architecture e SOLID",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@types/node": "^16.11.12",
+        "git-commit-msg-linter": "^3.2.8",
+        "typescript": "^4.5.2"
+    }
 }
