@@ -1,4 +1,3 @@
 #!/bin/sh
 
-npx --version
-npx lint-staged
+npx lint-staged --no-stash
