@@ -5,7 +5,7 @@ dotenv.config()
 
 const connectionString =
     process.env.MONGO_URL ||
-    "mongodb://localhost:27017clean-node-api?readPreference=primary&directConnection=true&ssl=false"
+    "mongodb://localhost:27017/clean-node-api?readPreference=primary&directConnection=true&ssl=false"
 
 const port = process.env.PORT || 5050
 

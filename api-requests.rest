@@ -1,4 +1,14 @@
 @url = http://localhost:5050/api
 
-POST {{url}}/signup
+###
+# @name SignUp
+POST {{url}}/signup HTTP/1.1
+content-type: application/json
+
+{
+    "name": "any_name",
+    "email": "any_name@mail.com",
+    "password": "any_password",
+    "passwordConfirmation": "any_password"
+}
 
