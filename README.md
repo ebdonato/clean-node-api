@@ -15,7 +15,18 @@ Para alterar o editor padrão do git, insira no arquivo de configuração:
 
 ```bash
 [core]
-	editor = notepad --wait
+	editor = code --wait
 ```
 
-> Seguindo o [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
+Para sempre realizar o push com as tags, insira no arquivo de configuração:
+
+```bash
+[push]
+    followTags = true
+```
+
+> Seria o equivalente a `git push origin main --follow-tags`
+
+# Padronização das mensagens dos commits
+
+Seguindo o [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
