@@ -11,4 +11,3 @@ content-type: application/json
     "password": "any_password",
     "passwordConfirmation": "any_password"
 }
-
