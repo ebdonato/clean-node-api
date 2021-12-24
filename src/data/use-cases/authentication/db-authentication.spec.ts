@@ -1,5 +1,3 @@
-import {rejects} from "assert"
-import {resolve} from "path/posix"
 import {AccountModel} from "../../../domain/models/account"
 import {AuthenticationModel} from "../../../domain/use-cases/authentication"
 import {LoadAccountByEmailRepository} from "../../protocols/load-account-by-email-repository"
