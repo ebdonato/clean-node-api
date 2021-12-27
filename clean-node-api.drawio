@@ -10,7 +10,7 @@
                 <mxCell id="3" value="Data" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeWidth=2;fontStyle=1" parent="1" vertex="1">
                     <mxGeometry x="810" y="314" width="100" height="20" as="geometry"/>
                 </mxCell>
-                <mxCell id="4" value="Encrypter" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;fillColor=#eeeeee;strokeColor=#36393d;fontColor=#000000;strokeWidth=2;fontStyle=1" parent="1" vertex="1">
+                <mxCell id="4" value="Hasher" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;fillColor=#eeeeee;strokeColor=#36393d;fontColor=#000000;strokeWidth=2;fontStyle=1" parent="1" vertex="1">
                     <mxGeometry x="320" y="354" width="150" height="40" as="geometry"/>
                 </mxCell>
                 <mxCell id="5" value="LoadUserByEmail" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;fillColor=#eeeeee;strokeColor=#36393d;fontColor=#000000;strokeWidth=2;fontStyle=1" parent="1" vertex="1">
