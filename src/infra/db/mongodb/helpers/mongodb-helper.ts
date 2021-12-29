@@ -28,8 +28,8 @@ export const MongoHelper = {
     },
 
     map(doc: any): any {
-        const {_id, ...docWithoutId} = doc
+        const {_id: id, ...docWithoutId} = doc
 
-        return Object.assign({}, docWithoutId, {id: _id})
+        return Object.assign({}, docWithoutId, {id})
     },
 }
