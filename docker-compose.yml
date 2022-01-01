@@ -13,8 +13,10 @@ services:
         restart: always
         build: .
         image: clean-node-api
+        command: npm run debug
         ports:
             - "5050:5050"
+            - "9222:9222"
         depends_on:
             - mongo
         links:

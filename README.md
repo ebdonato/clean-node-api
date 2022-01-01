@@ -49,7 +49,9 @@ Para construir a imagem, use:
 
 Para criar um container com a imagem criada, use:
 
-`docker run -d -p 5050:5050 clean-node-api`
+`docker run -d -p 5050:5050 clean-node-api npm run debug`
+
+A imagem não contém comando incluso para iniciar a aplicação automaticamente, por isso `npm run debug` é incluído no final do arquivo.
 
 > Lembrando que é possível ajustar as variáveis de ambiente, adicionando `-e MONGO_URL=mongodb://localhost:27017/clean-node-api?readPreference=primary&directConnection=true&ssl=false` por exemplo ao comando
 

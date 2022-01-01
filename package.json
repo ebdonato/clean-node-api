@@ -11,11 +11,12 @@
         "test:integration": "npm test -- --watch -c jest.config.integration.js",
         "test:staged": "npm test -- --findRelatedTests",
         "test:ci": "npm test -- --coverage",
-        "dev": "sucrase-node src/main/server.ts",
         "up": "npm run build && docker-compose up -d",
         "down": "docker-compose down",
+        "dev": "sucrase-node src/main/server.ts",
+        "build": "rimraf dist && tsc",
         "start": "node dist/main/server.js",
-        "build": "rimraf dist && tsc"
+        "debug": "node --inspect=0.0.0.0:9222 --nolazy dist/main/server.js"
     },
     "keywords": [],
     "author": "",
