@@ -11,3 +11,13 @@ content-type: application/json
     "password": "any_password",
     "passwordConfirmation": "any_password"
 }
+
+###
+# @name Login
+POST {{url}}/login HTTP/1.1
+content-type: application/json
+
+{
+    "email": "any_name@mail.com",
+    "password": "any_password"
+}
