@@ -10,6 +10,6 @@ MongoHelper.connect(connectionString)
     .then(async () => {
         const app = (await import("./config/app")).default
 
-        app.listen(port, () => console.log("Server is running at http://localhost:5050"))
+        app.listen(port, () => console.log(`Server is running at port ${port}`))
     })
     .catch(console.error)
