@@ -1,13 +1,10 @@
 import {MongoHelper} from "../infra/db/mongodb/helpers/mongodb-helper"
-import dotenv from "dotenv"
 
-dotenv.config()
+import env from "./config/env"
 
-const connectionString =
-    process.env.MONGO_URL ||
-    "mongodb://localhost:27017/clean-node-api?readPreference=primary&directConnection=true&ssl=false"
+const connectionString = env.mongoURL
 
-const port = process.env.PORT || 5050
+const port = env.port
 
 MongoHelper.connect(connectionString)
     .then(async () => {

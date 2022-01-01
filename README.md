@@ -30,3 +30,7 @@ Para sempre realizar o push com as tags, insira no arquivo de configuração:
 # Padronização das mensagens dos commits
 
 Seguindo o [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
+
+# Container Docker para o MongoDB
+
+`docker run --name some-mongo -p 27017:27017 -d mongo`
