@@ -34,3 +34,23 @@ Seguindo o [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/
 # Container Docker para o MongoDB
 
 `docker run --name some-mongo -p 27017:27017 -d mongo`
+
+# Dockerize
+
+## build
+
+Para construir a imagem, use:
+
+`docker build -t clean-node-api .`
+
+> Antes de construir a imagem Docker, é necessário "compilar" o projeto de Typescript para Javascript.
+
+## run
+
+Para criar um container com a imagem criada, use:
+
+`docker run -d -p 5050:5050 clean-node-api`
+
+> Lembrando que é possível ajustar as variáveis de ambiente, adicionando `-e MONGO_URL=mongodb://localhost:27017/clean-node-api?readPreference=primary&directConnection=true&ssl=false` por exemplo ao comando
+
+> docker-composer também disponível, já conectando a imagem do projeto com um container do MongoDB.
