@@ -2,7 +2,7 @@ import {LogErrorRepository} from "../../data/protocols/db/log/log-error-reposito
 import {AccountModel} from "../../domain/models/account"
 import {okResponse, serverError} from "../../presentation/helpers/http/http-helper"
 import {Controller, HttpRequest, HttpResponse} from "../../presentation/protocols"
-import {LogControllerDecorator} from "./log-controller-decoratos"
+import {LogControllerDecorator} from "./log-controller-decorators"
 
 const makeController = (): Controller => {
     class ControllerStub implements Controller {
