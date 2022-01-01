@@ -1,4 +1,4 @@
-version: "3.1"
+version: "3"
 services:
     mongo:
         container_name: mongo-container
@@ -13,10 +13,11 @@ services:
         restart: always
         build: .
         image: clean-node-api
-        command: npm start
         ports:
             - "5050:5050"
-        volumes:
-            - ./dist:/usr/src/clean-node-api/dist
+        depends_on:
+            - mongo
         links:
             - mongo
+        environment:
+          - MONGO_URL=mongodb://mongo:27017/clean-node-api?readPreference=primary&directConnection=true&ssl=false
