@@ -15,6 +15,6 @@ RUN npm install --only=production
 
 COPY ./dist ./dist
 
-EXPOSE 5050 9222
+EXPOSE 5050
 
-# CMD [ "npm", "run", "debug" ]
+CMD [ "npm", "run", "start" ]
