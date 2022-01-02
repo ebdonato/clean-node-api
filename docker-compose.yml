@@ -13,7 +13,7 @@ services:
         image: node:14
         working_dir: /usr/src/clean-node-api
         restart: always
-        command: bash -c "npm install --only=production && npm run debug"
+        command: bash -c "npm install --only=production && npm install nodemon --no-save && npm run debug"
         ports:
             - "5050:5050"
             - "9222:9222"
