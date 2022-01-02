@@ -6,3 +6,4 @@ globalConfig.json
 .env
 *.log
 data
+!src/data
