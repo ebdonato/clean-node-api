@@ -1,5 +1,5 @@
-import {EmailInUseError} from "../../errors"
-import {badRequest, forbiddenError, okResponse, serverError} from "../../helpers/http/http-helper"
+import {EmailInUseError} from "../../../errors"
+import {badRequest, forbiddenError, okResponse, serverError} from "../../../helpers/http/http-helper"
 import {
     Controller,
     HttpRequest,
