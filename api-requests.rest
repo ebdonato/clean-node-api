@@ -21,3 +21,21 @@ content-type: application/json
     "email": "any_name@mail.com",
     "password": "any_password"
 }
+
+###
+# @name AddSurvey
+POST {{url}}/surveys HTTP/1.1
+content-type: application/json
+
+{
+    "question": "any_question",
+    "answers": [
+        {
+            "image": "any_image",
+            "answer": "any_answer"
+        },
+        {
+            "answer": "other_answer"
+        }
+    ]
+}
