@@ -91,13 +91,7 @@ describe("DBAccount Use case", () => {
 
         jest.spyOn(hashSpyStub, "hash").mockReturnValueOnce(new Promise((resolve, reject) => reject(new Error())))
 
-        const accountData = {
-            name: "valid name",
-            email: "valid_name@mail.com",
-            password: "valid password",
-        }
-
-        const promise = sut.add(accountData)
+        const promise = sut.add(makeFakeAccountData())
 
         await expect(promise).rejects.toThrow()
     })
