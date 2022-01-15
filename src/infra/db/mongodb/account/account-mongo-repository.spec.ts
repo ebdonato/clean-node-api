@@ -120,7 +120,7 @@ describe("Account Mongo Repository", () => {
             expect(account.password).toBe("any_password")
         })
 
-        test("Should return an account on loadByToken with role", async () => {
+        test("Should return an account on loadByToken with admin role", async () => {
             const sut = makeSut()
 
             await accountCollection.insertOne({
@@ -128,10 +128,10 @@ describe("Account Mongo Repository", () => {
                 email: "any_name@mail.com",
                 password: "any_password",
                 accessToken: "any_token",
-                role: "any_role",
+                role: "admin",
             })
 
-            const account = await sut.loadByToken("any_token", "any_role")
+            const account = await sut.loadByToken("any_token", "admin")
 
             expect(account?.id).toBeTruthy()
 
@@ -140,6 +140,44 @@ describe("Account Mongo Repository", () => {
             expect(account.email).toBe("any_name@mail.com")
 
             expect(account.password).toBe("any_password")
+        })
+
+        test("Should return an account on loadByToken if user is admin", async () => {
+            const sut = makeSut()
+
+            await accountCollection.insertOne({
+                name: "any_name",
+                email: "any_name@mail.com",
+                password: "any_password",
+                accessToken: "any_token",
+                role: "admin",
+            })
+
+            const account = await sut.loadByToken("any_token")
+
+            expect(account?.id).toBeTruthy()
+
+            expect(account.name).toBe("any_name")
+
+            expect(account.email).toBe("any_name@mail.com")
+
+            expect(account.password).toBe("any_password")
+        })
+
+        test("Should return null on loadByToken with invalid role", async () => {
+            const sut = makeSut()
+
+            await accountCollection.insertOne({
+                name: "any_name",
+                email: "any_name@mail.com",
+                password: "any_password",
+                accessToken: "any_token",
+                role: "any_token",
+            })
+
+            const account = await sut.loadByToken("any_token", "admin")
+
+            expect(account?.id).toBeFalsy()
         })
 
         test("Should return null with loadByToken fails", async () => {
