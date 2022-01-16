@@ -82,36 +82,33 @@ describe("Survey Routes", () => {
             await request(app).get("/api/surveys").expect(403)
         })
 
-        // test("Should return 204 on add survey with valid token", async () => {
-        //     const res = await accountCollection.insertOne({
-        //         name: "any_name",
-        //         email: "any_name@mail.com",
-        //         password: "any_password",
-        //         role: "admin",
-        //     })
+        test("Should return 200 on load surveys with valid token", async () => {
+            const res = await accountCollection.insertOne({
+                name: "any_name",
+                email: "any_name@mail.com",
+                password: "any_password",
+            })
 
-        //     const id = res.ops[0]._id
+            const id = res.ops[0]._id
 
-        //     const accessToken = sign({id}, env.jwtSecret)
+            const accessToken = sign({id}, env.jwtSecret)
 
-        //     await accountCollection.updateOne({_id: id}, {$set: {accessToken}})
+            await accountCollection.updateOne({_id: id}, {$set: {accessToken}})
 
-        //     await request(app)
-        //         .post("/api/surveys")
-        //         .set("x-access-token", accessToken)
-        //         .send({
-        //             question: "any_question",
-        //             answers: [
-        //                 {
-        //                     image: "any_image",
-        //                     answer: "any_answer",
-        //                 },
-        //                 {
-        //                     answer: "other_answer",
-        //                 },
-        //             ],
-        //         })
-        //         .expect(204)
-        // })
+            await surveyCollection.insertMany([
+                {
+                    question: "any_question",
+                    answers: [
+                        {
+                            image: "any_image",
+                            answer: "any_answer",
+                        },
+                    ],
+                    date: new Date(),
+                },
+            ])
+
+            await request(app).get("/api/surveys").set("x-access-token", accessToken).expect(200)
+        })
     })
 })
