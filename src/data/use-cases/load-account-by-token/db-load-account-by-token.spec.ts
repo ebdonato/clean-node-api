@@ -111,7 +111,7 @@ describe("DbLoadAccountByToken Use case", () => {
         expect(promise).rejects.toThrow()
     })
 
-    test("Should throws if loadAccountAccountByTokenRepositor throws", async () => {
+    test("Should throws if LoadAccountAccountByTokenRepository throws", async () => {
         const {sut, loadAccountAccountByTokenRepositoryStub} = makeSut()
 
         jest.spyOn(loadAccountAccountByTokenRepositoryStub, "loadByToken").mockReturnValueOnce(
