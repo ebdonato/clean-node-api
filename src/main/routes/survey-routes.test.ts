@@ -1,9 +1,9 @@
+import app from "@/main/config/app"
+import env from "@/main/config/env"
+import {MongoHelper} from "@/infra/db/mongodb/helpers/mongodb-helper"
+import {sign} from "jsonwebtoken"
 import {Collection} from "mongodb"
 import request from "supertest"
-import {MongoHelper} from "../../infra/db/mongodb/helpers/mongodb-helper"
-import app from "../config/app"
-import env from "../config/env"
-import {sign} from "jsonwebtoken"
 
 describe("Survey Routes", () => {
     let surveyCollection: Collection

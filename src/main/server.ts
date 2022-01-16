@@ -1,6 +1,8 @@
-import {MongoHelper} from "../infra/db/mongodb/helpers/mongodb-helper"
+import "module-alias/register"
 
-import env from "./config/env"
+import {MongoHelper} from "@/infra/db/mongodb/helpers/mongodb-helper"
+
+import env from "@/main/config/env"
 
 const connectionString = env.mongoURL
 

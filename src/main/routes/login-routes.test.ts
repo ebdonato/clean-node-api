@@ -1,8 +1,8 @@
+import app from "@/main/config/app"
+import env from "@/main/config/env"
+import {MongoHelper} from "@/infra/db/mongodb/helpers/mongodb-helper"
 import {Collection} from "mongodb"
 import request from "supertest"
-import {MongoHelper} from "../../infra/db/mongodb/helpers/mongodb-helper"
-import app from "../config/app"
-import env from "../config/env"
 import {hash} from "bcrypt"
 
 describe("Login Routes", () => {
