@@ -1,5 +1,7 @@
 @url = http://localhost:5050/api
 
+@accessToken = {{SignUp.response.body.accessToken}}
+
 ###
 # @name SignUp
 POST {{url}}/signup HTTP/1.1
@@ -26,6 +28,7 @@ content-type: application/json
 # @name AddSurvey
 POST {{url}}/surveys HTTP/1.1
 content-type: application/json
+x-access-token: {{accessToken}}
 
 {
     "question": "any_question",
@@ -39,3 +42,8 @@ content-type: application/json
         }
     ]
 }
+
+###
+# @name LoadSurveys
+GET {{url}}/surveys HTTP/1.1
+x-access-token: {{accessToken}}
