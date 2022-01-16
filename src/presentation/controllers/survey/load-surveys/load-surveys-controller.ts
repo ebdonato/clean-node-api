@@ -1,4 +1,4 @@
-import {okResponse, serverError} from "../../../helpers/http/http-helper"
+import {noContentResponse, okResponse, serverError} from "../../../helpers/http/http-helper"
 import {Controller, HttpRequest, HttpResponse, LoadSurveys} from "./load-surveys-controller-protocols"
 
 export class LoadSurveysController implements Controller {
@@ -10,7 +10,7 @@ export class LoadSurveysController implements Controller {
         try {
             const surveys = await this.loadSurveys.load()
 
-            return okResponse(surveys)
+            return surveys.length ? okResponse(surveys) : noContentResponse()
         } catch (error) {
             return serverError(error as Error)
         }
