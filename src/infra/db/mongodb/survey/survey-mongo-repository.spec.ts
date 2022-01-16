@@ -18,6 +18,10 @@ const makeFakeSurveyData = (): AddSurveyModel => ({
     date: new Date(),
 })
 
+const makeSut = (): SurveyMongoRepository => {
+    return new SurveyMongoRepository()
+}
+
 describe("Survey Mongo Repository", () => {
     let surveyCollection: Collection
 
@@ -35,17 +39,15 @@ describe("Survey Mongo Repository", () => {
         await surveyCollection.deleteMany({})
     })
 
-    const makeSut = (): SurveyMongoRepository => {
-        return new SurveyMongoRepository()
-    }
+    describe("add()", () => {
+        test("Should add a survey on success", async () => {
+            const sut = makeSut()
 
-    test("Should add a survey on success", async () => {
-        const sut = makeSut()
+            await sut.add(makeFakeSurveyData())
 
-        await sut.add(makeFakeSurveyData())
+            const survey = await surveyCollection.findOne({question: "any_question"})
 
-        const survey = await surveyCollection.findOne({question: "any_question"})
-
-        expect(survey).toBeTruthy()
+            expect(survey).toBeTruthy()
+        })
     })
 })
