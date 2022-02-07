@@ -6,7 +6,7 @@ Para inserir alias de comando git, insira no arquivo de configuração:
 [alias]
 	s = !git status -s
 	c = !git add --all && git commit -m
-	l = !git log --pretty=format:'%C(blue)%h%C(red)%d %C(white)%s - %C(cyan)%cn, %C(green)%cr'
+	l = !git log --pretty=format:'%C(yellow)%h%C(green)%d %C(white)%s - %C(red)%cn, %C(cyan)%cr' --abbrev=7
     pom = !git push -u origin main
 ```
 
